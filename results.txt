@@ -1,0 +1,62 @@
+C:\Users\me\Desktop\#1307 test>python test_1307.py
+============================================================
+CASE 1: allow_delete_section = true
+============================================================
+----- BASE -----
+[section]
+key: value
+
+----- OVERRIDES -----
+[section2]
+key: __DELETED__
+
+[section3]
+__action__: DELETED
+
+[section4]
+keep_me: true
+
+===== OLD (broken) =====
+[section]
+key: value[section2]
+key: __DELETED__
+
+[section4]
+keep_me: true
+
+===== NEW (fixed) =====
+[section]
+key: value[section4]
+keep_me: true
+
+============================================================
+CASE 2: allow_delete_section = false
+============================================================
+----- BASE -----
+[section]
+key: value
+
+----- OVERRIDES -----
+[section2]
+key: __DELETED__
+
+[section3]
+__action__: DELETED
+
+[section4]
+keep_me: true
+
+===== OLD (broken) =====
+[section]
+key: value[section2]
+key: __DELETED__
+
+[section4]
+keep_me: true
+
+===== NEW (fixed) =====
+[section]
+key: value[section4]
+keep_me: true
+
+C:\Users\me\Desktop\#1307 test>

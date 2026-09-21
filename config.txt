@@ -1,0 +1,29 @@
+===== CASE 1: allow_delete = true =====
+----- BASE -----
+[section]
+key: value
+
+----- OVERRIDES -----
+[section2]
+key: __DELETED__
+
+[section3]
+__action__: DELETED
+
+[section4]
+keep_me: true
+
+===== CASE 2: allow_delete = false =====
+----- BASE -----
+[section]
+key: value
+
+----- OVERRIDES -----
+[section2]
+key: __DELETED__
+
+[section3]
+__action__: DELETED
+
+[section4]
+keep_me: true
