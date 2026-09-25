@@ -1,0 +1,94 @@
+
+
+root@Ender3V3-7BB8 /usr/data [#] cat /usr/data/pellcorp-overrides/webcam.conf
+[cam 1]
+__action__: DELETED
+
+
+root@Ender3V3-7BB8 /usr/data [#] cat /usr/data/pellcorp/mounts/bltouch/Default-f001.overrides
+
+-- bltouch.cfg
+[bltouch]
+x_offset: 999
+y_offset: 999
+
+[bed_mesh]
+mesh_min: 999,999
+mesh_max: 999,999
+
+[screws_tilt_adjust]
+__action__: DELETED
+
+[axis_twist_compensation]
+__action__: DELETED
+
+-- printer.cfg
+[test_missing]
+key: __DELETED__
+root@Ender3V3-7BB8 /usr/data [#]
+
+
+
+
+
+
+
+####################################################################################################
+
+
+
+
+
+root@Ender3V3-7BB8 /usr/data/pellcorp [#] /usr/data/pellcorp/installer.sh --update --force
+
+WARNING: Ender 3 V3 printer support is VERY experimental!!!
+
+INFO: There is 88.2M remaining on your / partition
+INFO: There is 104.2M remaining on your /tmp partition
+INFO: There is 5.5G remaining on your /usr/data partition
+
+INFO: Mode is update
+INFO: Probe is bltouch
+INFO: Mount is Default
+
+
+INFO: Backing up existing configuration ...
+
+
+
+
+ERROR: Previous partial installation detected, configuration overrides will not be generated
+INFO: Previous configuration overrides will be used instead
+
+
+INFO: Updating webcam config ...
+
+INFO: Installing custom boot display ...
+
+INFO: Updating moonraker config ...
+
+INFO: Updating nginx config ...
+
+INFO: Updating klipper config ...
+
+INFO: Updating grumpyscreen config ...
+
+
+
+INFO: Setting up bltouch/crtouch/3dtouch ...
+
+INFO: Applying overrides ...
+
+INFO: Fixing up client variables ...
+Overriding variable_custom_park_x to 217 (was 0)
+Overriding variable_park_at_cancel_x to 217 (was 0)
+Overriding variable_park_at_cancel_y to 211 (was 0)
+
+
+INFO: Restarting Moonraker ...
+INFO: Restarting Nginx ...
+INFO: Restarting Klipper ...
+INFO: Restarting Grumpyscreen ...
+INFO: Restarting Webcam ...
+
+INFO: Your MCU Firmware is up to date!
